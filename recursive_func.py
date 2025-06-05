@@ -63,3 +63,27 @@ def count_occurrences(lst: list[int], target: int) -> int:
     
 
 print(count_occurrences([1, 2, 3, 4, 2, 2, 5], 2) )
+
+def find_min(lst: list[int]) -> int:
+    if len(lst) == 1:
+        return lst[0]
+    return min(lst[0], find_min(lst[1:]))
+
+def power(x: int, n: int) -> int:
+    if n == 1:  # Base case: x^0 = 1
+        return x
+    
+    return x * power(x, n - 1)  # Recursive step
+
+
+print(power(2, 3))
+
+def is_sorted(lst: list[int]) -> bool:
+    if len(lst) == 1 or len(lst) == 0:
+        return True
+    
+    if lst[0] > lst[1]:
+        return False
+    
+    return is_sorted(lst[1:])
+
